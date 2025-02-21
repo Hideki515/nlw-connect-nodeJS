@@ -1,3 +1,4 @@
+import { ColumnBuilder } from 'drizzle-orm'
 import type { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 import { subscribeToEvent } from '../functions/subscribe-to-event'
@@ -12,6 +13,7 @@ export const subscriptionToEventRoute: FastifyPluginAsyncZod = async app => {
         body: z.object({
           name: z.string(),
           email: z.string().email(),
+          referrer: z.string().nullish(),
         }),
         response: {
           201: z.object({
@@ -21,11 +23,11 @@ export const subscriptionToEventRoute: FastifyPluginAsyncZod = async app => {
       },
     },
     async (resquest, reply) => {
-      const { name, email } = resquest.body
-
+      const { name, email, referrer } = resquest.body
       const { subscriberID } = await subscribeToEvent({
         name,
         email,
+        referrerId: referrer,
       })
 
       return reply.status(201).send({

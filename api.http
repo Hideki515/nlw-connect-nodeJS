@@ -2,9 +2,28 @@ POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
 {
-  "name": "Hideki",
-  "email": "hideki@gmail.com"
+  "name": "Usuário Indicado11",
+  "email": "Indicado11@gmail.com.br",
+  "referrer": "0330c979-bf34-478b-bd33-1f2096ea47a6"
 }
 
+# 0330c979-bf34-478b-bd33-1f2096ea47a6
+
 ###
-GET http://localhost:3333/invites/Teset
+GET http://localhost:3333/invites/c5749c43-3a80-4f72-b814-987654f551c2
+
+###
+
+GET http://localhost:3333/subcribers/c5749c43-3a80-4f72-b814-987654f551c2/ranking/clicks
+
+###
+
+GET http://localhost:3333/subcribers/c5749c43-3a80-4f72-b814-987654f551c2/ranking/count
+
+###
+
+GET http://localhost:3333/subcribers/c5749c43-3a80-4f72-b814-987654f551c2/ranking/position
+
+###
+
+GET http://localhost:3333/ranking
