@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1740136457217,
+      "tag": "0000_volatile_hellion",
+      "breakpoints": true
+    }
+  ]
+}
